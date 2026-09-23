@@ -1,7 +1,55 @@
-# Shadow Wings - Confirmed Facts (facts only)Each entry: Source / Date checked / Status.- Team Shadow Wings: registered, status = assigned (not waitlisted), League C, assigned 2026-09-23 15:45 UTC. - AFC League API live feed / 2026-09-23 / CONFIRMED- Matches played at handoff: 0. No standing exists yet. - AFC League API live feed / 2026-09-23 / CONFIRMED- League C snapshot team count: 422 (against the 2,000 cap). - league feed snapshot / 2026-09-23 / CONFIRMED (snapshot-level)- Nigeria is not among the 21 excluded regions - regional eligibility clean. - Official Rules Section 2 / 2026-09-23 / CONFIRMED- Scoring: Win +30, Draw +10, Loss +2 flat; win-only bonuses: +6/goal margin (max +30), +10 clean sheet, +8 per win from 3rd consecutive win. - KB Rev 21 Section 8 / 2026-09-23 / CONFIRMED- 7 rounds; Round 3 Sep 25–27; Final Round 7 Oct 23–25; all times UTC+8. - Official Rules Section 4 / 2026-09-23 / CONFIRMED- 10 league matches per week; 2-minute automated matches; 30-minute cooldown between real matches; prompts locked during matches. - KB Rev 21 / 2026-09-23 / CONFIRMED- Practice matches award no points and never affect standing. - registration email + KB Section 7B / 2026-09-23 / CONFIRMED- Prompts editable between matches; locked while a match runs; last saved setup is what plays; changes require "Redeploy changes". - KB + registration email / 2026-09-23 / CONFIRMED- Match report generated after each fixture; intended for prompt refinement between matches. - KB / 2026-09-23 / CONFIRMED- Coach shout max 200 characters; broadcast to every agent; advisory context, not hard commands. - official in-game tutorial / 2026-09-23 / CONFIRMED (tutorial snippet; verify on portal)- 5-a-side; positions 0–4 = goalkeeper, defender, midfielder, forward-left, forward-right; pitch 110x70; sudden death if tied. - KB Rev 21 Sections 6–7 / 2026-09-23 / CONFIRMED- Action vocabulary: MOVE_TO, PASS, SHOOT, DRIBBLE, PRESS_BALL, MARK, INTERCEPT, TACKLE, CLEAR, IDLE + goalkeeper-specific set. - official technical material / 2026-09-23 / CONFIRMED- 10 Grand Finale qualifiers (6 league winners + 4 wildcards); Finale 3 Dec 2026, AWS re:Invent Las Vegas; USD 50,000 pool; top 3 overall win 30k/15k/5k; in-person attendance mandatory. - Official Rules Sections 4–6 / 2026-09-23 / CONFIRMED- Winner notification by October 30, 2026 by email. - Official Rules Section 6 / 2026-09-23 / CONFIRMED- Prompt Set V2 frozen 2026-09-23, approved by the coach. - internal record / 2026-09-23 / CONFIRMED- Shout Playbook V1.1 frozen 2026-09-23 (three corrections: S3, S5, S8). - internal record / 2026-09-23 / CONFIRMED- Data-capture protocol v1.1 active; practice quota TBC pending portal read. - internal record / 2026-09-23 / CONFIRMEDNot stored here: the coach's registration email, passwords, keys, tokens, cookies, private portal URLs, billing data.**
+# Shadow Wings — Confirmed Facts
 
-**A**
+This file separates current public-source facts, direct registration-record facts and internal project facts. Conflicts are not hidden; see `TBC_AND_CONFLICTS.md`.
 
-AFC Coach Mind for Aighewi Eghosa
+## Current public AFC sources — checked 2026-09-23
 
-**Handoff part 4 of 5.
+- The current AFC leaderboard defines a **Clean match** as a match finished without conceding and says it is worth **+5 points**.
+  - Source: https://agenticfootballcup.ai/leaderboard
+- The official in-game tutorial says a coach shout can contain **up to 200 characters** and goes to **every agent on the pitch** while play continues.
+  - Source: https://agenticfootballcup.ai/tutorial?step=in-game
+- The official team tutorial shows five agent slots and identifies the portal's default formation as **2-1-1**, while also showing formation can be changed.
+  - Source: https://agenticfootballcup.ai/tutorial?step=team
+  - Shadow Wings' actual live formation remains TBC; never infer it from the tutorial default.
+- Published Strands technical material describes 5v5 play, a decision point about every 2 seconds, a 1-second hard response contract in that implementation, and the structured action vocabulary including MOVE_TO, PASS, SHOOT, DRIBBLE, PRESS_BALL, MARK, INTERCEPT, TACKLE, CLEAR and IDLE.
+  - Source: https://strandsagents.com/blog/inside-agentic-football-cup/
+  - This timing claim conflicts with transferred Virtual League KB timing; see TBC file.
+
+## Direct registration-record facts
+
+- AFC Virtual League runs September 11 to October 25, Friday–Sunday, UTC+8, for seven consecutive weeks.
+- Up to six leagues, up to 2,000 teams each.
+- Up to 10 practice matches per week.
+- Practice matches award no points.
+- 10 league matches per week.
+- League matches can be initiated with **Find opponent** or allowed to auto-play.
+- Prompt/model changes require **Redeploy changes**.
+- 10 Grand Finale qualifiers: six league winners + four wildcards.
+- Grand Finale is at AWS re:Invent in Las Vegas.
+- Prize pool: USD 50,000; USD 30,000 / 15,000 / 5,000 for top three.
+
+## Internal Shadow Wings facts
+
+- Team: Shadow Wings.
+- League: C.
+- Prompt Set V2 frozen 2026-09-23.
+- Shout Playbook V1.1 frozen 2026-09-23.
+- Capture Protocol v1.1 ready.
+- Practice matches played: 0 at handoff.
+- League matches played: 0 at handoff.
+- Formation, player models and deployment health require a live portal read.
+
+## Source-specific transferred claims
+
+Transferred KB Rev 21 material recorded:
+
+- Win +30, Draw +10, Loss +2.
+- +6 per goal margin up to +30.
+- +10 clean sheet.
+- +8 per win from the third consecutive win.
+
+Because the current public leaderboard says Clean match +5, the clean-match component is **not treated as settled**. See `TBC_AND_CONFLICTS.md`.
+
+## Not stored
+
+Registration email address, passwords, keys, tokens, cookies, private portal URLs and billing information are not stored here.
