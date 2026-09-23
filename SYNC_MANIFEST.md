@@ -1,5 +1,6 @@
 # Shadow Wings Sync Manifest
 
+**Sync revision:** SW-2026-09-23.1  
 **Purpose:** cheapest possible cross-agent synchronization point.
 
 ## Current project state
@@ -17,20 +18,7 @@
 
 ## Current next action
 
-Read the live AFC portal configuration and practice panel before spending Practice Match 1.
-
-Required portal capture:
-
-1. exact formation shown
-2. exact model for each of the five players
-3. deployment status/health for each agent
-4. practice matches available/remaining
-5. replenishment/carryover information
-6. practice opponents and repeatability
-7. cooldown/retry/abandon/error-attempt behaviour
-8. exact competitive window start/end displayed
-9. shout limits/cooldown/persistence information if exposed
-10. report/replay/log retention information if exposed
+Complete `practice/PORTAL_LAUNCH_CHECKLIST.md` from the live AFC portal before spending Practice Match 1.
 
 ## Files a synced AI must read now
 
@@ -39,23 +27,44 @@ Required portal capture:
 3. `prompts/V2_BASELINE.md`
 4. `competition/TBC_AND_CONFLICTS.md`
 5. `practice/DATA_CAPTURE_PROTOCOL_V1.1.md`
+6. `practice/PORTAL_LAUNCH_CHECKLIST.md`
 
-## Latest material change
+## Latest material changes — 2026-09-23
 
-2026-09-23:
+- Added a GitHub-first low-Cognition sync system.
+- Added `handoff/SYNC_PROTOCOL.md` and `handoff/MIND_SYNC_PROMPT.md`.
+- Added `practice/PORTAL_LAUNCH_CHECKLIST.md`.
+- Registration record remains the source for **up to 10 practice matches/week**; live portal still decides current remaining attempts and operational restrictions.
+- Current official AFC leaderboard says **Clean match = +5 points**.
+- Transferred KB Rev 21 material says **+10 clean sheet**.
+- The clean-match value is an active conflict; do not optimize around it until the current portal/rules resolve it.
+- Official AFC tutorial confirms shouts are up to **200 characters** and go to **every agent on the pitch**.
+- Published Strands technical material describes a **1-second** hard decision contract in its implementation; transferred Virtual League KB material records roughly **5 seconds / repeat previous action**. Live Virtual League telemetry remains the Shadow Wings authority.
+- Match-Day Plan was updated so it no longer assumes the disputed +10 clean-sheet value.
 
-- Added this sync system.
-- Recorded a current-source scoring conflict: the live AFC leaderboard currently labels a clean match as **+5 points**, while transferred KB Rev 21 material recorded **+10 for a clean sheet**.
-- Do **not** optimize around the disputed clean-match bonus until the current portal/rules resolve it.
-- Official AFC tutorial still confirms live coach shouts are up to **200 characters** and go to **every agent on the pitch**.
-- Published Strands technical material still describes a **1-second** hard decision contract, which conflicts with transferred Virtual League KB material describing about **5 seconds / repeat previous action**. Live Virtual League telemetry remains the authority for Shadow Wings.
+## Files changed in this sync revision
+
+- `README.md`
+- `CONTROL_FILE.md`
+- `SYNC_MANIFEST.md`
+- `handoff/CURRENT_STATE.md`
+- `handoff/SYNC_PROTOCOL.md`
+- `handoff/MIND_SYNC_PROMPT.md`
+- `competition/AFC_RULES_AND_STRUCTURE.md`
+- `competition/CONFIRMED_FACTS.md`
+- `competition/SOURCE_REGISTER.md`
+- `competition/TBC_AND_CONFLICTS.md`
+- `practice/DATA_CAPTURE_PROTOCOL_V1.1.md`
+- `practice/PRACTICE_ALLOCATION.md`
+- `practice/PORTAL_LAUNCH_CHECKLIST.md`
+- `tactics/MATCH_DAY_PLAN.md`
 
 ## Sync command contract
 
 When the coach says **SYNC SHADOW WINGS**:
 
 1. Read this file first.
-2. Read only the files listed above plus any files explicitly named under “Latest material change”.
+2. Read only the files listed above or named under the latest material changes.
 3. Do not perform unrelated research.
 4. Do not modify frozen baselines.
 5. Do not assume portal values.
@@ -63,4 +72,4 @@ When the coach says **SYNC SHADOW WINGS**:
 
 ## Public repository safety
 
-Never commit passwords, tokens, cookies, private portal links, billing information, registration-email addresses, or other secrets.
+Never commit passwords, tokens, cookies, private portal links, billing information, registration-email addresses or other secrets.
