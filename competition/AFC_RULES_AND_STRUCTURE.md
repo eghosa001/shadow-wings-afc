@@ -1,1 +1,115 @@
-# AFC Virtual League - Rules and Structure (Shadow Wings working copy)Labels used throughout: CONFIRMED (verified from official sources) / PORTAL CONFIRMED (only via the live portal - none yet at handoff) / TBC / CONFLICT.## 1. Season structure - CONFIRMED (Official Rules Section 4; registration email)- AFC Virtual League runs September 11 to October 25, Friday–Sunday each week, UTC+8 competition schedule, seven consecutive weeks. (Registration email directly confirmed these.)- Rounds: R1 Sep 11–13, R2 Sep 18–20, R3 Sep 25–27, R4 Oct 2–4, R5 Oct 9–11, R6 Oct 16–18, Final Round 7 Oct 23–25.- Weekend window: Friday 00:00 UTC+8 to Sunday 23:59 UTC+8 (working assumption; exact displayed opening time TBC at portal).- CONFLICT: the Official Rules state the Contest Period ends November 1, 2026 12:00 UTC+8; the knowledge base says October 25. Official Rules govern; October 25 is the last playing date either way.- CONFLICT: the Official Rules prize section references "Round 8"; the published schedule has 7 rounds. Schedule stated as published; Official Rules govern.## 2. Leagues and qualification - CONFIRMED- Up to six leagues (A–F), up to 2,000 teams per league. Placement random, not by country. Team stays in its league all season.- 10 league matches per week; opponents random within own league. Nobody plays outside their league until the Grand Finale.- Registration closes October 22 (or earlier if full) - late joining allowed.- Qualification: 10 Grand Finale qualifiers - six league winners + four wildcard winners.- Wildcards: 4 seats, 4 categories - Fastest Goal of the Weekend, Comeback of the Weekend, Giant Killer, Winning Streak. Each is a calculated statistic for one AWS-chosen week; AWS can pick or move the weeks - TBC which weeks.- Rank basis: best 27 matches across the season; if fewer than 27 played, the rank uses the total of all matches played.- What can cost a qualified place: inactivity (deploy at least once in any two-week stretch or the team may be removed), duplicate accounts (disqualification), missing in-person attendance at re:Invent (disqualified from any prize), non-response to winner notification. AWS may require eligibility verification at any time.- TBC: replacement mechanism if a league winner is ineligible - sources silent.## 3. Scoring - CONFIRMED (KB Rev 21 Section 8)- Win +30, Draw +10, Loss +2 flat. No match scores below +2.- Bonuses on wins only: +6 per goal of margin (max +30), +10 clean sheet, +8 per win from the 3rd consecutive win onward; any loss or draw resets the streak.- Tie-breakers: no fixed published order. If scores are tied at the end, AWS decides in its sole discretion (may add a scoring mechanism, play a tie-break match, or decide outright). Head-to-head and strength-of-schedule: not in any source - TBC.## 4. Practice matches - CONFIRMED mechanics (KB Rev 21 Section 7B)- Practice matches are against an AWS benchmark team; they award no points and never affect standing or ranking.- No cooldown documented between practice matches; you cannot run a practice match while a real match is running.- Prompts are editable between practice matches; locked only while a match is playing.- TBC (portal-only): actual quota shown, replenishment timing, carryover, full opponent menu and styles, repeatability, whether abandoning/retrying/errored matches consume an attempt, report/replay/log retention.- CONFLICT: the registration email directly confirmed "up to 10 practice matches per week"; the coach's data-capture protocol v1.1 (boss-ordered) withdrew the "10 practice matches" figure as unverified pending the live portal panel. Record both; do not silently reconcile. See TBC_AND_CONFLICTS.md.## 5. Competitive matches - CONFIRMED- 10 real matches per week (maximum, not minimum), opponents random within league, fully automated, 2 minutes each, 30-minute cooldown between real matches.- Prompts editable between matches including during cooldown; locked while a match runs; last saved setup is what plays. Matches can autoplay while offline (expected behaviour).- League matches can be manually initiated with "Find opponent" or auto-play (registration email).- Prompt deadline: changes must be saved before that round's kick-off or agents play the default (Round 1) or previous week's prompt (KB Section 02).- Prompt or model changes require "Redeploy changes" (registration email).- TBC: same-opponent repeatability, fixture generation timing, agent-deploy-failure behaviour.## 6. Match engine - CONFIRMED (KB Rev 21 Sections 6–7)- 5-a-side, 2 minutes, sudden death if tied (next goal wins), no out of bounds, every restart is a kickoff.- Each player re-decides roughly every 2 seconds and must respond within about 5 seconds or it repeats its last action.- Squad positions: 0 goalkeeper, 1 defender, 2 midfielder, 3 forward (left/primary), 4 forward (right/secondary). Pitch 110 x 70, x from -55 to +55, y from -35 to +35, in thirds.- Action vocabulary (from official technical material): MOVE_TO, PASS, SHOOT, DRIBBLE, PRESS_BALL, MARK, INTERCEPT, TACKLE, CLEAR, IDLE, plus a goalkeeper-specific action set. Exact action parameters: TBC.- CONFLICT: a technical breakdown cites a 1-second per-decision latency budget; the KB says respond within ~5 seconds. Not decided until live telemetry resolves it.- TBC: exact match state visible to agents, coordinate interpretation / mirroring, malformed-output handling beyond repeat-last-action.## 7. Coach shouts- Max 200 characters per shout (official in-game tutorial; verify on portal). Shouts are typed live, broadcast to every agent, appear as speech bubbles, and are weighed as suggestions on the next decision cycle - not hard commands.- TBC: duration, persistence, stacking, cooldown, per-match limit, keeper-specific handling, latency cost, timestamps in reports.## 8. Match reports and telemetry - CONFIRMED- A match report is generated after each fixture and is the intended tool for refining prompts between matches.- Per match from the league feed: score, goal timeline, match stats, per-agent command distribution, per-agent latency, average latency, success rate, awards (MVP, fastest, most tactical).- TBC: possession/shots/passes/tackles/interceptions/heatmaps per-metric availability, per-agent decision logs, p95/p99 latency, raw exports, download options, report/replay/log retention.## 9. Eligibility and fair play - CONFIRMED (Official Rules Section 2; KB Section 04)- 18+; one entry per person for the whole season; individual entry only; free entry; AWS personnel and households excluded.- 21 excluded regions: Argentina, Australia, Brazil, Hong Kong, Indonesia, Italy, Malaysia, Philippines, Thailand, Vietnam, Singapore, Russia, Cuba, Iran, North Korea, Syria, Belarus, Crimea, DNR, LNR, UAE. Nigeria is NOT on the list - regional eligibility clean.- Fair-play bans (KB Section 18): multiple accounts, bots/scripts/automation/emulators, collusion or result manipulation, impersonation, scraping or republishing leaderboard/fixture/result data.- Using an AI assistant to analyze own match reports and refine own prompts is the intended loop (the competition ships an Assistant Coach). The line: everything through official interfaces; no scripts touching the platform, no scraping, no coordination with other teams.- TBC: identity-verification deadlines, tax mechanics, travel-document requirements.## 10. Prizes and Grand Finale - CONFIRMED (Official Rules Sections 4–6; KB Sections 12–13)- The Virtual League sends 10 finalists: 6 league champions + 4 wildcard winners.- Grand Finale: Thursday 3 December 2026, AWS re:Invent, Las Vegas (re:Invent Nov 30 – Dec 4). Attendance in person is mandatory - a finalist who cannot attend is disqualified from any prize.- At the Finale, all 50 finalists from every AWS Agentic Football competition are ranked live; top 3 overall win cash: USD 30,000 / 15,000 / 5,000. Prize pool USD 50,000. No guaranteed cash for a Virtual League finalist beyond the top-3 live ranking.- Finalist package: round-trip economy flights, five-night Las Vegas stay, USD 500 spending money, full re:Invent entry. Prize non-transferable. Travel insurance not provided.- Winner notification: by October 30, 2026 by email - reply promptly or risk forfeiting.- TBC: visa/passport/tax obligations itemization, Grand Finale T&Cs (not yet published).## 11. Registration-email facts (directly confirmed by the coach; email address itself NOT stored here)- AFC Virtual League runs September 11 to October 25; Friday–Sunday each week; UTC+8 competition schedule; seven consecutive weeks.- Up to six leagues; up to 2,000 teams per league.- Up to 10 practice matches per week (CONFLICT - see Section 4 above and TBC_AND_CONFLICTS.md).- Practice matches award no points.- 10 league matches per week; league matches can be manually initiated with Find opponent or auto-play.- Prompt or model changes require "Redeploy changes".- 10 Grand Finale qualifiers: six league winners + four wildcard winners.- Grand Finale at AWS re:Invent in Las Vegas; USD 50,000 prize pool; USD 30,000 first; USD 15,000 second; USD 5,000 third.
+# AFC Virtual League — Rules and Structure (Shadow Wings working copy)
+
+Labels: **CURRENT PUBLIC**, **REGISTRATION RECORD**, **TRANSFERRED KB/RULES**, **PORTAL TBC**, **CONFLICT**.
+
+## 1. Season structure
+
+**REGISTRATION RECORD**
+
+- September 11 to October 25, 2026.
+- Friday–Sunday each week, UTC+8.
+- Seven consecutive weeks.
+- Round 3 recorded as Sep 25–27; later rounds continue weekly through Oct 23–25.
+- Exact displayed opening/closing clock times: **PORTAL TBC**.
+
+**CONFLICT:** transferred Official Rules record says the Contest Period ends Nov 1, 2026 12:00 UTC+8, while the playing schedule ends Oct 25.
+
+## 2. Leagues and qualification
+
+**REGISTRATION RECORD**
+
+- Up to six leagues.
+- Up to 2,000 teams per league.
+- 10 league matches per week.
+- 10 Grand Finale qualifiers: six league winners + four wildcard winners.
+
+Transferred records additionally describe random same-league pairing, wildcard categories and best-27 ranking. These should be rechecked against current rules before being used for optimization.
+
+## 3. Scoring
+
+**CURRENT PUBLIC**
+
+- Current AFC leaderboard says **Clean match = +5 points**.
+
+**TRANSFERRED KB Rev 21**
+
+- Win +30, Draw +10, Loss +2.
+- +6 per goal margin, max +30.
+- +10 clean sheet.
+- +8 per win from the third consecutive win.
+
+**CONFLICT:** +5 current leaderboard vs +10 transferred KB for a no-concession match.
+
+**Operating rule:** do not optimize around the disputed clean-match value until current portal/rules evidence resolves it.
+
+## 4. Practice matches
+
+**REGISTRATION RECORD**
+
+- Up to 10 practice matches per week.
+- Practice matches award no points.
+
+**PORTAL TBC**
+
+- current remaining attempts
+- replenishment/carryover
+- opponent menu and repeatability
+- cooldown
+- retry/abandon/error attempt consumption
+- report/replay/log retention
+
+## 5. Competitive matches
+
+**REGISTRATION RECORD**
+
+- 10 league matches per week.
+- Find opponent can initiate a match; matches can also auto-play.
+- Prompt/model changes require **Redeploy changes**.
+
+Transferred KB material records 2-minute automated matches, a 30-minute real-match cooldown and prompt locking while a match runs. Recheck live behaviour before relying on cooldown details.
+
+## 6. Match engine
+
+**CURRENT TECHNICAL SOURCE — Strands article**
+
+- 5v5.
+- Decision point about every 2 seconds in the described implementation.
+- Structured actions include MOVE_TO, PASS, SHOOT, DRIBBLE, PRESS_BALL, MARK, INTERCEPT, TACKLE, CLEAR, IDLE, plus goalkeeper-specific actions.
+- Described implementation uses a 1-second hard response contract and IDLE on timeout.
+
+**CONFLICT:** transferred Virtual League KB material records roughly 5 seconds / repeat previous action.
+
+**Operating rule:** Shadow Wings live telemetry is the authority for Virtual League timing.
+
+## 7. Coach shouts
+
+**CURRENT PUBLIC — official tutorial**
+
+- Up to 200 characters.
+- Sent to every agent on the pitch.
+- Match clock keeps running.
+
+Transferred tactical interpretation treats shouts as advisory context; the Strands article likewise describes free-text human guidance as context agents may or may not follow.
+
+**PORTAL TBC:** persistence, stacking, cooldown, per-match limit, report timestamps.
+
+## 8. Match reports and telemetry
+
+Transferred records say reports are generated after fixtures and expose score/timeline plus agent-level analytics. Exact current fields and retention remain **PORTAL TBC**.
+
+## 9. Fair play
+
+Transferred rules/KB records prohibit multiple accounts, bots/scripts/automation/emulators touching the competition, collusion/result manipulation, impersonation and scraping/republishing competition data.
+
+Shadow Wings project automation is therefore restricted to off-platform documentation, analysis and version control.
+
+## 10. Prizes and Grand Finale
+
+**REGISTRATION RECORD**
+
+- Grand Finale at AWS re:Invent, Las Vegas.
+- 10 Virtual League qualifiers.
+- USD 50,000 prize pool.
+- USD 30,000 / 15,000 / 5,000 top-three prizes.
+
+Other travel, notification and eligibility details remain in the transferred rules record and should be rechecked when decision-relevant.
