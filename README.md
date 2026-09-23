@@ -19,7 +19,9 @@
 
 ## Read this first
 
-**READ [CONTROL_FILE.md](CONTROL_FILE.md) BEFORE DOING ANY WORK.**
+For any AI sync, read **[SYNC_MANIFEST.md](SYNC_MANIFEST.md)** first.
+
+Then read **[CONTROL_FILE.md](CONTROL_FILE.md)** before doing Shadow Wings work.
 
 **DO NOT MODIFY THE FROZEN V2 BASELINE DIRECTLY.**
 
@@ -29,6 +31,7 @@ All future tactical experiments must create a new version (V2.1, V2.2, ...). See
 
 | Path | Contents |
 |---|---|
+| `SYNC_MANIFEST.md` | Lowest-cost AI synchronization entry point |
 | `CONTROL_FILE.md` | Single source of truth |
 | `prompts/` | Frozen V2 baseline + prompt changelog |
 | `tactics/` | Match-day plan + Shout Playbook V1.1 |
@@ -38,6 +41,6 @@ All future tactical experiments must create a new version (V2.1, V2.2, ...). See
 | `scouting/` | Opponent scouting template |
 | `analytics/` | Match scorecard |
 | `experiments/` | Experiment template, keep/revert framework, changelog |
-| `handoff/` | CURRENT_STATE.md — AI-to-AI continuation file |
+| `handoff/` | Current state + AI sync protocol |
 
-> Canonical tactic files use underscores: `tactics/MATCH_DAY_PLAN.md` and `tactics/SHOUT_PLAYBOOK_V1.1.md`.
+Canonical tactic files use underscores: `tactics/MATCH_DAY_PLAN.md` and `tactics/SHOUT_PLAYBOOK_V1.1.md`.
