@@ -1,1 +1,128 @@
-# Shadow Wings Data-Capture Protocol - v1.1 (2026-09-23)Governing rule: maximize information gained per practice match, not the number of matches played. V2 and formation stay FROZEN throughout this protocol. No practice match is played until the boss reports the confirmed practice quota and restrictions from the live Alpha Season portal.v1.1 changelog (boss-ordered corrections): practice-match quota demoted to TBC (the verified official figure is 10 LEAGUE matches per week Fri-Sun, not 10 practice matches); window opening time demoted to TBC; boss portal-report checklist added as the launch gate; formation field explicitly must not default to the portal default.---## 1. Practice-match availability - verified statusStatus after boss review 2026-09-23: TBC across the board. Official/public AFC material confirms 10 LEAGUE matches per week (Friday-Sunday). It confirms practice matches exist in the portal, but no official statement on the practice-match quota has been verified. The earlier "10 practice matches per week" figure is withdrawn as unverified and must not be used for planning.- Practice quota: TBC until read directly from the portal practice panel. Do not build the experiment schedule around any number - including 10 - until the portal shows it.- Window opening time: TBC. Friday 00:00 UTC+8 is a working assumption; the Lagos conversion (Thursday 17:00 WAT) holds only if that is the official opening time. Confirm the exact start/end times the portal displays.- Opponents: reported as three named practice opponents - Benchmark FC (balanced fundamentals), Total Attack United (high press, risk-taking), Fort Knox Athletic (deep block, counters). Exact names, availability, and repeatability: TBC.- Cooldown between practice matches: TBC.- Reset/retry restrictions: TBC.- Whether abandoned practice matches consume an attempt: TBC.Boss report at window open (launch-gate checklist). The schedule is designed only after these lines are reported from the live practice panel:- practice matches available/remaining, and whether/when they replenish- opponent choices, and whether opponents can be repeated- any cooldown- any reset/retry limitation- whether abandoned practice matches consume an attempt- the exact competitive-window start/end times displayedLaunch gate: Match 1 is not started until the confirmed quota and restrictions are reported. Once received, the allocation is redesigned for maximum information per available practice match before the first one is spent.---## 2. Part A - Baseline Record (complete before Match 1)| Field | Value ||---|---|| Pre-match timestamp | ___ (record UTC and Lagos time) || Formation | ___ (the boss copies the exact formation name/value displayed by the portal, verbatim. Do NOT assume the portal default - it has never been written down by name) || Benchmark opponent | Benchmark FC (confirm exact portal name at window open) || Match configuration | ___ (practice match; record half length, tick settings, anything the portal exposes) || Shout policy | NO shout. Exception rule in Part B applies || Portal/model settings | ___ (any model or setting shown in the portal that could affect agent behaviour - record verbatim) || Post-match storage | Full post-match report, replay, and any decision/event logs - saved verbatim, never summary-only |### Exact V2 prompts - frozen 2026-09-23, verbatim, paste-ready(Identical to prompts/V2_BASELINE.md. Compare the live portal prompts against prompts/V2_BASELINE.md character-for-character before kick-off - any drift means the match does not count as baseline.)---## 3. Part B - Match 1: PURE BASELINE rules1. V2 exactly as frozen. 2. Formation unchanged. 3. Benchmark opponent. 4. No prompt edits. 5. No formation changes. 6. Prefer NO coach shout at all - we observe V2 without another variable. 7. Shout only if a genuine abnormal situation makes the match useless without intervention; if used, record exact game time, score, full shout text, and reason. 8. Do not judge V2 from the final score alone.****Launch gate override of everything above: no launch until the boss reports the confirmed practice quota and restrictions (Section 1 checklist).---## 4. Part C - Capture list (everything the portal exposes)Record "not exposed" wherever the portal gives nothing - absence is itself data that shapes future capture.Match-level: final score · goals and timestamps · possession · shots · shot conversion · clean-sheet status · major match events.Per-agent: commands/actions used · command distribution · decision success/failure · latency · timeouts/idle/fallback behaviour · stamina (if available) · position/heatmap (if available) · contradictions between actions and the player's V2 role.Tactical: progressive-pass attempts and success · turnovers by field zone · central defensive breaches · failed pressing situations · Forward 1/Forward 2 spacing · missed runs · missed shooting opportunities · defender positioning · midfielder availability in transition · goalkeeper distribution · goalkeeper rushing/interception decisions.Raw evidence: preserve the original post-match report, replay, and any decision/event logs available - verbatim. Never summary-only where the underlying evidence can be saved.---## 5. Part D - Post-match classificationEvery observation gets exactly one label:- Isolated event - happened once, not repeated within the match. Logged, not acted on.- Possible pattern - repeated within a single match, no cross-match confirmation yet.- Repeatable weakness - recurs across decisions AND holds across matches; tied to a specific V2 rule or gap. The only class that can produce a change.- Insufficient evidence - the portal doesn't expose enough to classify. Stated as such, never guessed.Hard rule: no V2 change after Match 1 unless there is an obvious technical failure - repeated timeouts, invalid actions, or a prompt demonstrably not deployed.---## 6. Part E - Match 2: reproducibility runIdentical configuration to Match 1 in every recorded field: same five prompts, same formation, same opponent, same shout policy, no edits between matches. Compare Match 1 vs Match 2 against the frozen evaluation order (latency/idle → goals/shots → turnovers by zone → central breaches → command distribution → forward spacing → progressive-pass success). Only observations present in both matches advance to repeatable-weakness candidates. This prevents optimizing around randomness.Allocation note: whether Match 1 + Match 2 reproducibility is affordable is decided only after the boss reports the confirmed quota. If the quota is too tight, the trade-off is made consciously (Scarcity contingency, Section 8) - never silently.---## 6. Part F - V2.1 selection gateOnly after the baseline sample (Match 1 + Match 2 where availability allows): pick the single strongest repeatable weakness, run it through the Experimental Change Template (experiments/EXPERIMENT_TEMPLATE.md), one variable at a time, keep/revert framework decides. Never bundled.---## 7. Scarcity contingencyIf the portal shows a quota tighter than expected, or any cooldown that limits back-to-back matches: the confirmed quota is reported first, the experiment schedule is redesigned so every remaining match tests the highest-value hypothesis, and the two-match reproducibility requirement is traded consciously - not silently dropped.---## 7. Companion documents- V2 prompts: frozen 2026-09-23 - prompts/V2_BASELINE.md.- Shout Playbook V1.1: frozen 2026-09-23 with exactly three boss-approved corrections (S3 nearest-player press, S5 no-cross wording, S8 keeper-stays-secure). No other shout changes. The two-shouts-per-match rule inside it is our internal operating discipline, not a confirmed AFC rule - if the portal confirms a different restriction, we follow the portal and record it.
+# Shadow Wings Data-Capture Protocol — v1.1
+
+**Governing rule:** maximize information gained per practice match, not the number of matches played.
+
+V2 stays **FROZEN** throughout baseline capture. No Practice Match 1 is spent until the live portal launch gate is completed.
+
+## 1. Practice availability and launch gate
+
+The registration record confirms **up to 10 practice matches per week**.
+
+The live portal still must provide the operational values needed before allocation:
+
+- attempts available/remaining now
+- replenishment timing
+- carryover, if any
+- opponent choices
+- whether opponents can be repeated
+- cooldown
+- retry/reset limitations
+- whether abandoned or errored matches consume an attempt
+- exact competitive-window start/end displayed
+- report/replay/log retention
+
+Do not confuse the registration ceiling with the current remaining balance.
+
+## 2. Baseline record — complete before Match 1
+
+| Field | Value |
+|---|---|
+| Pre-match timestamp | ___ (UTC + local time) |
+| Formation | ___ exact portal value; never assume tutorial/default formation |
+| Opponent | ___ exact portal name |
+| Match configuration | ___ |
+| Shout policy | NO shout |
+| Player models | ___ all five |
+| Deployment health | ___ all five |
+| Practice attempts remaining before kickoff | ___ |
+| Post-match storage | Full report/replay/logs if exposed |
+
+Before kickoff, compare the five live prompts against `prompts/V2_BASELINE.md` character-for-character. Any drift means the run is not a valid V2 baseline.
+
+## 3. Practice Match 1 — pure baseline
+
+1. V2 exactly frozen.
+2. Formation unchanged.
+3. Use Benchmark FC if that opponent exists in the live panel; otherwise record the exact available opponent.
+4. No prompt edits.
+5. No formation changes.
+6. No coach shout unless a genuine technical abnormality would otherwise make the run unusable.
+7. If any shout is used, record exact time, score, text and reason.
+8. Do not judge V2 from final score alone.
+
+## 4. Capture everything exposed
+
+### Match level
+
+- final score
+- goal timestamps
+- possession
+- shots
+- conversion
+- no-concession/clean-match status
+- major events
+
+### Per agent
+
+- actions/commands
+- command distribution
+- decision success/failure
+- latency
+- timeout/idle/fallback behaviour
+- stamina if exposed
+- positional/heatmap data if exposed
+- contradictions with the frozen role prompt
+
+### Tactical
+
+- progressive-pass attempts/success
+- turnovers by zone
+- central defensive breaches
+- failed presses
+- Forward 1 / Forward 2 spacing
+- missed runs
+- missed shooting opportunities
+- defender positioning
+- midfielder availability
+- goalkeeper distribution/rushing/interception decisions
+
+### Raw evidence
+
+Preserve the full post-match report, replay and any decision/event logs when available. Do not retain only a summary when raw evidence can be saved.
+
+## 5. Observation classification
+
+Every observation gets one label:
+
+- **Isolated event** — one-off; log, do not act.
+- **Possible pattern** — repeated within one match, not cross-match confirmed.
+- **Repeatable weakness** — repeated across decisions and matches; only class that can justify a prompt change.
+- **Insufficient evidence** — state the gap; do not guess.
+
+No V2 change after Match 1 unless there is an obvious technical failure such as repeated timeout/invalid actions or a prompt demonstrably not deployed.
+
+## 6. Practice Match 2 — reproducibility
+
+Where the confirmed available budget permits, repeat Match 1 with the same prompts, formation, opponent and shout policy.
+
+Frozen comparison order:
+
+1. latency / idle-timeout behaviour
+2. goals and shots
+3. turnovers by zone
+4. central breaches
+5. command distribution
+6. forward spacing
+7. progressive-pass success
+
+Only cross-match patterns become V2.1 candidates.
+
+## 7. V2.1 gate
+
+After baseline evidence, choose the single strongest repeatable weakness and use `experiments/EXPERIMENT_TEMPLATE.md`.
+
+One meaningful variable at a time. KEEP/REVERT is decided by `experiments/KEEP_REVERT_FRAMEWORK.md`.
+
+## 8. Scarcity contingency
+
+If the portal shows fewer usable attempts than expected or a limiting cooldown, redesign the remaining allocation before spending another match. Reproducibility may be traded consciously, never silently.
