@@ -1,1 +1,20 @@
-# Shadow Wings - Source RegisterSources already used to establish the project record. No new research was performed for this handoff. Where a URL was not preserved, it is stated as such rather than invented.| Source | Type | What it supports | Date checked | URL ||---|---|---|---|---|| AFC Virtual League Official Rules (finalized Aug 28, 2026) | official rules | season structure, calendar, leagues, qualification, prizes, eligibility, fair play | 2026-09-23 | URL not preserved in handoff || AFC official knowledge base Rev 21 | AFC site | scoring, tie-breakers, match engine, practice and competitive match rules, shouts, models menu | 2026-09-23 | URL not preserved in handoff || AFC League API live feed (staging) | league feed | Shadow Wings status (assigned, League C, 0 matches), match telemetry fields, team counts | 2026-09-23 | URL not preserved in handoff || Official in-game tutorial pages | AFC site | coach shout mechanics (200-char limit, broadcast, advisory) | 2026-09-23 (search-verified snippet, not freshly re-fetched; verify on portal) | URL not preserved in handoff || Official AWS/Strands technical material | AWS | action vocabulary (MOVE_TO, PASS, SHOOT, DRIBBLE, PRESS_BALL, MARK, INTERCEPT, TACKLE, CLEAR, IDLE + keeper set), 1-second latency budget claim | 2026-09-23 | URL not preserved in handoff || Registration email (coach's direct record; address itself NOT stored in this repo) | registration email | season dates, window cadence, UTC+8, 7 weeks, 6 leagues, 2,000 teams/league, 10 practice matches/week claim, practice = no points, 10 league matches/week, Find opponent / auto-play, Redeploy changes, 10 finalists, 6+4 split, Finale and prize figures | 2026-09-23 | n/a (email) || Live Alpha Season portal | portal | formation, models, deployment health, practice panel, live prompts | NOT YET READ | pending window-open read |
+# Shadow Wings — Source Register
+
+| Source | Type | What it supports | Last checked | URL |
+|---|---|---|---|---|
+| AFC leaderboard | Official AFC site | Current public leaderboard fields; Clean match definition and +5 value | 2026-09-23 | https://agenticfootballcup.ai/leaderboard |
+| AFC in-game tutorial | Official AFC site | Shout composer, 200-character limit, broadcast to every agent | 2026-09-23 | https://agenticfootballcup.ai/tutorial?step=in-game |
+| AFC team tutorial | Official AFC site | Five agent slots, team management, formation UI, tutorial default 2-1-1 | 2026-09-23 | https://agenticfootballcup.ai/tutorial?step=team |
+| Strands: Inside Agentic Football Cup | Strands/AWS technical material | 5v5, ~2s decision points, 1s implementation contract, structured action vocabulary | 2026-09-23 | https://strandsagents.com/blog/inside-agentic-football-cup/ |
+| AFC Virtual League Official Rules | Official rules | Season structure, eligibility, qualification, prizes; transferred record only | 2026-09-23 | URL not preserved in handoff |
+| AFC knowledge base Rev 21 | AFC knowledge-base record | Scoring record, engine/practice/competitive mechanics, model menu; transferred record only | 2026-09-23 | URL not preserved in handoff |
+| AFC League API/live feed | League-feed record | Shadow Wings assignment, league snapshot, telemetry fields; transferred record only | 2026-09-23 | URL not preserved in handoff |
+| Registration email | Direct registration record | Season cadence, practice ceiling, league-match count, Find opponent/auto-play, Redeploy changes, qualification and prize figures | 2026-09-23 | Private email; address/content not stored verbatim |
+| Live AFC portal | Portal | Actual formation, player models, deployment health, live prompts, practice attempts/restrictions | NOT YET READ | Portal access required |
+
+## Source hierarchy for operations
+
+1. Live portal/current official AFC pages for current operational behaviour.
+2. Direct registration record for registration-specific facts.
+3. Transferred official-rules/KB records for facts not yet re-fetched.
+4. Published Strands technical article for implementation context, not as automatic proof of Virtual League runtime behaviour.
