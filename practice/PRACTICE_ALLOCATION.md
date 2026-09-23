@@ -1,1 +1,25 @@
-# Practice Match Allocation - PROVISIONALStatus: the final allocation is NOT fixed. It is finalized only after the boss reads the live practice panel (launch gate in CONTROL_FILE.md). Do not play anything before the allocation is agreed.## Provisional experiment philosophy1. Baseline - Practice Match 1: V2 unchanged, formation unchanged, Benchmark FC if available, no shout, full evidence captured.2. Exact baseline repeat - Practice Match 2: identical setup to Match 1.3. Pause and analyze - scorecards, observation classification, no match spent.4. Test one V2.1 change - the single largest repeatable weakness, through the experiment template.5. Repeat the V2.1 test.6. Test versus a different opponent style.7. Continue controlled robustness testing.8. Preserve at least one final-validation opportunity.## Quota status- The registration email confirms up to 10 practice matches per week.- Data-Capture Protocol v1.1 records that figure as withdrawn/unverified pending the live portal panel.- Actual quota: TBC. The allocation above is redesigned for the confirmed budget the moment the panel is read (see practice/DATA_CAPTURE_PROTOCOL_V1.1.md, Scarcity contingency).## Hard rules- No V2.1 change merely because Match 1 is won or lost. Do not judge V2 from the final score alone.- Practice Match 1 is a no-shout baseline.- Do not create V2.1 before baseline evidence exists.
+# Practice Match Allocation — PROVISIONAL
+
+**Registration ceiling:** up to 10 practice matches per week.  
+**Operational budget:** TBC until the live portal shows current attempts remaining and consumption rules.
+
+Do not spend Practice Match 1 before the launch gate in `CONTROL_FILE.md` and `DATA_CAPTURE_PROTOCOL_V1.1.md` is complete.
+
+## Provisional sequence
+
+1. Match 1 — pure V2 baseline, no shout.
+2. Match 2 — exact baseline repeat if the budget permits.
+3. Pause and analyze; spend no match.
+4. Select one V2.1 candidate from the strongest repeatable weakness.
+5. Test V2.1 once.
+6. Repeat V2.1 if the budget permits.
+7. Test robustness against a materially different opponent style if available.
+8. Preserve at least one final-validation opportunity whenever the remaining budget allows.
+
+## Hard rules
+
+- No V2.1 merely because Match 1 is won or lost.
+- No simultaneous prompt + formation + model change.
+- No unlogged shout in a baseline run.
+- No experiment without an explicit success metric and guard metrics.
+- Current portal attempts remaining, not the registration ceiling, determines what is affordable.
