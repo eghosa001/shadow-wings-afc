@@ -19,6 +19,8 @@ No registration email, passwords, API keys, tokens, cookies, or private identifi
 - Capture Protocol: v1.1 — **READY** (`practice/DATA_CAPTURE_PROTOCOL_V1.1.md`)
 - Practice Match 1: **NOT YET PLAYED**
 - League matches: **0 played at the time of handoff**
+- **Rounds 1 and 2 missed**
+- Competitive recovery point: **Round 3 onward**
 - AI sync entry point: `SYNC_MANIFEST.md`
 - Source of truth: this repository
 
@@ -37,14 +39,21 @@ Balanced vertical-transition football:
 
 Before Practice Match 1:
 
-1. Verify five live V2 prompts against `prompts/V2_BASELINE.md` character-for-character.
-2. Record exact live formation; never assume the portal default.
-3. Record models for all five players.
-4. Confirm deployment health.
-5. Read the live practice panel: current remaining attempts, replenishment/carryover, opponents, cooldown and retry/abandon/error behaviour.
-6. Record exact competitive-window start/end displayed.
-7. Preserve portal configuration evidence.
-8. Finalize practice allocation **BEFORE** spending the first attempt.
+1. Confirm the portal still shows Shadow Wings active/eligible for the current round.
+2. Verify five live V2 prompts against `prompts/V2_BASELINE.md` character-for-character.
+3. Record exact live formation; never assume the portal default.
+4. Record models for all five players.
+5. Confirm deployment health.
+6. Read the live practice panel: current remaining attempts, replenishment/carryover, opponents, cooldown and retry/abandon/error behaviour.
+7. Record exact competitive-window start/end displayed.
+8. Preserve portal configuration evidence.
+9. Finalize practice allocation **BEFORE** spending the first attempt.
+
+## Late-start rule
+
+The first two league weeks were missed. Public AFC material confirms seven league weeks and 10 matches per week, so Shadow Wings should treat the remaining scheduled weekends as the competitive runway unless the live portal states otherwise.
+
+Do not assume missed weeks can be replayed.
 
 ## Practice strategy
 
@@ -81,3 +90,4 @@ Do not play anything until the practice allocation is agreed.
 - 2026-09-23: Persistent Shadow Wings state handed off into this repository.
 - 2026-09-23: GitHub sync manifest/protocol added for low-Cognition cross-agent synchronization.
 - 2026-09-23: Current leaderboard +5 clean-match value recorded as a conflict against transferred KB +10.
+- 2026-09-23: Coach confirmed Rounds 1 and 2 were missed; recovery state updated to Round 3 onward.
