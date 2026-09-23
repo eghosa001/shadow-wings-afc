@@ -1,0 +1,1 @@
+# Experiments Changelog## V2Status: Frozen baseline (2026-09-23). See prompts/V2_BASELINE.md.No experiments run yet. No V2.1 or later exists. No change may be created before baseline evidence exists.Entries below this line are added per tested change, one per experiment, using experiments/EXPERIMENT_TEMPLATE.md.
