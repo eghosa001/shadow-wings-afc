@@ -9,6 +9,8 @@
 - Capture Protocol v1.1 ready
 - Practice matches played: 0
 - League matches played at handoff: 0
+- **Rounds 1 and 2 were missed**
+- Current recovery target: enter from **Round 3 onward**
 - Formation requires live portal confirmation
 - Models require live portal confirmation
 - Deployment health requires live portal confirmation
@@ -17,6 +19,12 @@
 - Practice Match 1 should be a no-shout baseline
 - Do not create V2.1 before baseline evidence exists
 - Clean-match bonus value is disputed: current leaderboard says +5; transferred KB Rev 21 says +10
+
+## Late-start implication
+
+Public AFC material confirms seven weeks of league play and 10 matches per week. With the first two weekends missed, Shadow Wings should treat the remaining five league weekends as the available competitive runway, subject to the live portal still showing the team as active/eligible.
+
+Do not assume missed weeks can be replayed.
 
 ## Next AI instruction
 
